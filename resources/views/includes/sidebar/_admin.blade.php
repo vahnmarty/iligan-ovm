@@ -61,6 +61,10 @@
                 <x-sidebar-menu-item link="{{ url('logistics/requests/create') }}">
                   Create Request
                 </x-sidebar-menu-item>
+
+                <x-sidebar-menu-item link="{{ url('logistics/requests/item-lookup') }}">
+                  Item Schedule 
+                </x-sidebar-menu-item>
                 <x-sidebar-menu-item link="{{ url('logistics/dashboard') }}">
                   Dashboard
                 </x-sidebar-menu-item>

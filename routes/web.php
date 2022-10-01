@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Logistics\Dashboard;
 use App\Http\Livewire\Members\Registrants;
 use App\Http\Livewire\Members\ReviewBoard;
 use App\Http\Livewire\Members\CreateMember;
@@ -42,5 +43,6 @@ Route::group(['prefix' => 'logistics', 'middleware' => ['auth']], function(){
     Route::get('materials', ManageMaterials::class);
     Route::get('requests', ManageRequests::class);
     Route::get('requests/create', CreateRequest::class);
+    Route::get('dashboard', Dashboard::class);
 });
 

@@ -4,6 +4,8 @@ namespace App\Http\Livewire\Logistics;
 
 use Livewire\Component;
 use App\Models\Material;
+use App\Models\Requisition;
+use Auth;
 
 class CreateRequest extends Component
 {
@@ -12,6 +14,8 @@ class CreateRequest extends Component
     public $materials = [];
 
     public $selected = [];
+
+    public $is_review = false;
     
     public function render()
     {
@@ -46,6 +50,7 @@ class CreateRequest extends Component
         $material = Material::find($materialId);
 
         $this->items[$index]['stock_available'] =  $material->stock_available;
+        $this->items[$index]['material_name'] =  $material->name;
 
         $this->selected[] = $materialId;
     }
@@ -53,5 +58,36 @@ class CreateRequest extends Component
     public function removeItem($index)
     {
         unset($this->items[$index]);
+    }
+
+    public function next()
+    {
+        $this->is_review = true;
+    }
+
+    public function confirm()
+    {
+        $request = new Requisition;
+        $request->control_number = mt_rand();
+        $request->created_by = Auth::id();
+        $request->save();
+
+        if( count($this->items) )
+        {
+            foreach($this->items as $item)
+            {
+                if($item['material_id'])
+                {
+                    $request->items()->create([
+                        'material_id' => $item['material_id'],
+                        'quantity' => $item['quantity'],
+                        'persons' => 'Vahn',
+                        'date_start' => $item['date_start'],
+                        'date_end' => $item['date_end'],
+                    ]);
+                }
+                
+            }
+        }
     }
 }
