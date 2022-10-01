@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('material_category_id');
             $table->string('ui_icon')->nullable();
+            $table->string('code');
             $table->string('name');
             $table->string('description')->nullable();
             $table->boolean('active')->default(true);

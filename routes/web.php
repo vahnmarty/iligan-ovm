@@ -6,9 +6,9 @@ use App\Http\Livewire\Members\ReviewBoard;
 use App\Http\Livewire\Members\CreateMember;
 use App\Http\Livewire\Members\ManageMembers;
 use App\Http\Controllers\DashboardController;
+use App\Http\Livewire\Logistics\CreateRequest;
 use App\Http\Livewire\Members\MemberDashboard;
-use App\Http\Livewire\Logistics\CreateBorrower;
-use App\Http\Livewire\Logistics\ManageBorrowers;
+use App\Http\Livewire\Logistics\ManageRequests;
 use App\Http\Livewire\Logistics\ManageMaterials;
 use App\Http\Livewire\Members\ReviewApplication;
 use App\Http\Livewire\Collections\CreateCollection;
@@ -40,7 +40,7 @@ Route::middleware([
 
 Route::group(['prefix' => 'logistics', 'middleware' => ['auth']], function(){
     Route::get('materials', ManageMaterials::class);
-    Route::get('borrowers', ManageBorrowers::class);
-    Route::get('borrowers/create', CreateBorrower::class);
+    Route::get('requests', ManageRequests::class);
+    Route::get('requests/create', CreateRequest::class);
 });
 

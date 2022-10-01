@@ -20,6 +20,7 @@ class MaterialsTableSeeder extends Seeder
         ]);
 
         $tent->items()->create([
+            'code' => 'TENT',
             'ui_icon' => 'heroicon-o-home',
             'name' => 'Tent',
             'description' => '',
@@ -33,6 +34,7 @@ class MaterialsTableSeeder extends Seeder
         ]);
 
         $chair->items()->create([
+            'code' => 'CHAIR',
             'ui_icon' => 'bx-chair',
             'name' => 'Monoblock (White)',
             'description' => '',
@@ -42,6 +44,7 @@ class MaterialsTableSeeder extends Seeder
         ]);
 
         $chair->items()->create([
+            'code' => 'CHAIR',
             'ui_icon' => 'bx-chair',
             'name' => 'Monoblock (Red)',
             'description' => '',
@@ -56,6 +59,7 @@ class MaterialsTableSeeder extends Seeder
         ]);
 
         $car->items()->create([
+            'code' => 'RUSH',
             'ui_icon' => 'bx-car',
             'name' => 'Toyota Rush',
             'description' => 'KAK 4840',
@@ -65,6 +69,7 @@ class MaterialsTableSeeder extends Seeder
         ]);
 
         $car->items()->create([
+            'code' => 'URVAN',
             'ui_icon' => 'bx-car',
             'name' => 'Nissan Urvan',
             'description' => 'GOV 123',

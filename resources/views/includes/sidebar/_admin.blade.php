@@ -55,11 +55,11 @@
                 <x-sidebar-menu-item link="{{ url('logistics/materials') }}">
                   Materials
                 </x-sidebar-menu-item>
-                <x-sidebar-menu-item link="{{ url('logistics/borrowers') }}">
-                  Borrowers
+                <x-sidebar-menu-item link="{{ url('logistics/requests') }}">
+                  Requisition
                 </x-sidebar-menu-item>
-                <x-sidebar-menu-item link="{{ url('logistics/borrowers/create') }}">
-                  Create Borrower
+                <x-sidebar-menu-item link="{{ url('logistics/requests/create') }}">
+                  Create Request
                 </x-sidebar-menu-item>
                 <x-sidebar-menu-item link="{{ url('logistics/dashboard') }}">
                   Dashboard
