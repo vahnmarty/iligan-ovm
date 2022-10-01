@@ -7,7 +7,7 @@
             <div class="flex items-center justify-between w-full">
               <x-sidebar-menu-item link="#">
                 <x-heroicon-s-users class="flex-shrink-0 w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-300"/>
-                Organization
+                Users
               </x-sidebar-menu-item>
               <span>
                 <x-heroicon-s-chevron-down class="w-6 h-6 text-gray-300"/>
@@ -19,16 +19,10 @@
              x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
             <div class="text-xs pl-9">
               <x-sidebar-menu-item link="{{ url('admin/members') }}">
-                Dashboard
+                Users
               </x-sidebar-menu-item>
               <x-sidebar-menu-item link="{{ url('admin/members/registrants') }}">
-                Registrants
-              </x-sidebar-menu-item>
-              <x-sidebar-menu-item link="{{ url('admin/members/create') }}">
-                New Registration
-              </x-sidebar-menu-item>
-              <x-sidebar-menu-item link="{{ url('admin/members/index') }}">
-                Members
+                Create User
               </x-sidebar-menu-item>
             </div>
           </div>
@@ -47,7 +41,7 @@
               <div class="flex items-center justify-between w-full">
                 <x-sidebar-menu-item link="#">
                   <x-heroicon-s-hand class="flex-shrink-0 w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-300"/>
-                  Mortuary
+                  Logistics
                 </x-sidebar-menu-item>
                 <span>
                   <x-heroicon-s-chevron-down class="w-6 h-6 text-gray-300"/>
@@ -58,20 +52,17 @@
               x-bind:class="selected == 1 ? 'bg-gray-800' : '' "
                x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
               <div class="text-xs pl-9">
-                <x-sidebar-menu-item link="{{ url('admin/mortuary') }}">
+                <x-sidebar-menu-item link="{{ url('logistics/materials') }}">
+                  Materials
+                </x-sidebar-menu-item>
+                <x-sidebar-menu-item link="{{ url('logistics/borrowers') }}">
+                  Borrowers
+                </x-sidebar-menu-item>
+                <x-sidebar-menu-item link="{{ url('logistics/borrowers/create') }}">
+                  Create Borrower
+                </x-sidebar-menu-item>
+                <x-sidebar-menu-item link="{{ url('logistics/dashboard') }}">
                   Dashboard
-                </x-sidebar-menu-item>
-                <x-sidebar-menu-item link="{{ url('admin/mortuary/members') }}">
-                  Members
-                </x-sidebar-menu-item>
-                <x-sidebar-menu-item link="{{ url('admin/mortuary/disbursements') }}">
-                  Disbursements
-                </x-sidebar-menu-item>
-                <x-sidebar-menu-item link="{{ url('admin/mortuary/collections') }}">
-                  Collections
-                </x-sidebar-menu-item>
-                <x-sidebar-menu-item link="{{ url('admin/mortuary/reports') }}">
-                  Reports
                 </x-sidebar-menu-item>
               </div>
             </div>

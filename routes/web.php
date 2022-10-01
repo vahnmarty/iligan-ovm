@@ -7,6 +7,9 @@ use App\Http\Livewire\Members\CreateMember;
 use App\Http\Livewire\Members\ManageMembers;
 use App\Http\Controllers\DashboardController;
 use App\Http\Livewire\Members\MemberDashboard;
+use App\Http\Livewire\Logistics\CreateBorrower;
+use App\Http\Livewire\Logistics\ManageBorrowers;
+use App\Http\Livewire\Logistics\ManageMaterials;
 use App\Http\Livewire\Members\ReviewApplication;
 use App\Http\Livewire\Collections\CreateCollection;
 use App\Http\Livewire\Collections\ManageCollections;
@@ -35,18 +38,9 @@ Route::middleware([
 });
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
-
-    Route::get('/members', MemberDashboard::class);
-    Route::get('/members/index', ManageMembers::class);
-    Route::get('/members/registrants', Registrants::class);
-    Route::get('/members/create', CreateMember::class);
-    Route::get('/members/pending-review', ReviewBoard::class);
-    Route::get('/members/review/{uuid}', ReviewApplication::class);
-
-    Route::group(['prefix' => 'mortuary'], function(){
-        Route::get('/collections', ManageCollections::class);
-        Route::get('/collections/create', CreateCollection::class);
-    });
+Route::group(['prefix' => 'logistics', 'middleware' => ['auth']], function(){
+    Route::get('materials', ManageMaterials::class);
+    Route::get('borrowers', ManageBorrowers::class);
+    Route::get('borrowers/create', CreateBorrower::class);
 });
 
